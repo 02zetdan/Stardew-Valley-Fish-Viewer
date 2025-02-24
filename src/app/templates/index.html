@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Stardew valley fish viewer application</title>
+    <!-- <link rel="stylesheet" href="app.css"> -->
+  </head>
+  <style>
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+    td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+  </style>
+  <body>
+    <h1> Stardew Valley Fish Viewer</h1>
+    <p> Welcome to the stardew valley fish viewer application!</p>
+    <p> Below, you will find a table with all fishes which can be caught using a fishing rod. Later, fishes that can be caught in a crab pot will be added</p>
+    <section>
+        <article>
+            <h2 id="fishes">Fishes</h2>
+            <form action ="/" method="GET">
+              <label for="clear"> Clear</label>
+              <button type="submit" id="clear">Clear</button>
+            </form>
+        </article>
+        <article>
+            <form action="/fish/season" method="POST">
+                <label for="seasons">Seasons:</label>
+                <select id="season" name="season">
+                    <option value="Spring">Spring</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Fall">Fall</option>
+                    <option value="Winter">Winter</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+        </article>
+        <article>
+          <form action="/time" method="POST">
+              <label for="time">Time:</label>
+              <select id="time" name="time">
+                  <option value="6am">6-am</option>
+                  <option value="7am">7-am</option>
+                  <option value="8am">8-am</option>
+                  <option value="9am">9-am</option>
+                  <option value="10am">10-am</option>
+                  <option value="11am">11-am</option>
+                  <option value="12pm">12-pm</option>
+                  <option value="1pm">1-pm</option>
+                  <option value="2pm">2-pm</option>
+                  <option value="3pm">3-pm</option>
+                  <option value="4pm">4-pm</option>
+                  <option value="5pm">5-pm</option>
+                  <option value="6pm">6-pm</option>
+                  <option value="7pm">7-pm</option>
+                  <option value="8pm">8-pm</option>
+                  <option value="9pm">9-pm</option>
+                  <option value="10pm">10-pm</option>
+                  <option value="11pm">11-pm</option>
+                  <option value="1am">1-am</option>
+                  <option value="1am">2-am</option>
+              </select>
+              <button type="submit">Submit</button>
+          </form>
+      </article>
+        <article>
+               <search>
+                <form action="/fish/location" method="POST">
+                  <label for="location">Filter by location:</label>
+                <input name="location" id="location" placeholder="Location" type="search" value="">
+               </form>
+            </search>
+        </article>
+        <article>
+            <search>
+            <form action="/fish" method="POST">
+              <legend>Search for fish by name</legend>
+              <input name="fish" id="fish" placeholder="Ex: Anchovy" type="search" value="">
+            </form>
+          </search>
+        </article>
+          <article>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Season</th>
+                        <th>Time</th>
+                        <th>Weather</th>
+                        <th>Location</th>
+                    </tr>
+                    {% for fish in fishes.keys() %}
+                        <tr>
+                            <td>{{ fish }}</td>
+                            <td>{{ fishes[fish]['Seasons'] }}</td>
+                            <td>{{ fishes[fish]['Time'] }}</td>
+                            <td>{{ fishes[fish]['Weather'] }}</td>
+                            <td>{{ fishes[fish]['Locations'] }}</td>
+                        </tr>
+                    {% endfor %}
+                </thead>
+            </table>
+        </article>
+    </section>
+    <footer>
+        <p>Created by: <a href="https://github.com/02zeda" target="_blank">02zeda</a></p>
+        <p>Source Code: <a href=""> Github page</a></p>
+    </footer>
+  </body>
