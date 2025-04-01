@@ -1,0 +1,34 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+    - "5173:5173"
+    depends_on:
+      - flask_app
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./frontend/src:/app/src
+  flask_app:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db_service
+    volumes:
+      - ./src:/app/src
+    working_dir: /app/src/app
+    command: python -m flask run --host=0.0.0.0
+  db_service:
+    image: postgres:latest
+    container_name: fish-viewer-db_service
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRESS_DB=postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:

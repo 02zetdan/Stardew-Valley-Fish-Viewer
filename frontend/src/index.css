@@ -1,0 +1,74 @@
+/* Global Body Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Press Start 2P', cursive, sans-serif; /* Stardew font */
+  background-color: #d2f8d8; /* Light green background */
+  color: #4b9f6f; /* Soft green text color */
+}
+
+/* Main Container Styling */
+.container {
+  padding: 20px;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #4b9f6f;
+  color: #f1f1f1;
+  padding: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  border-top: 3px solid #3d7d56;
+}
+
+/* Links in Footer */
+footer a {
+  color: #f1f1f1;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons Styling */
+button, .btn {
+  background-color: #7c9b69; /* Rustic green */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #5c7a48; /* Darker green */
+}
+
+/* Add some vintage paper-like background texture */
+body {
+  /* background-image: url('https://www.transparenttextures.com/patterns/wood-skin.png'); */
+  background-size: cover;
+}
+
+/* Card Styling (if you have cards for fish or other items) */
+.card {
+  background-color: rgba(255, 255, 255, 0.9); /* Subtle white background */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #a6c5a1; /* Light border color */
+}
+
+/* Links (Buttons or Text) */
+a {
+  color: #7c9b69;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #4b9f6f;
+  text-decoration: underline;
+}
